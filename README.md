@@ -1,2 +1,62 @@
 # Smart_aquarium
 Smart Aquarium, ESP32-based, monitors air temp, humidity (DHT11), water temp (DS18B20), pH, TDS, food level. Servo automates feeding; pump controls water. Blynk 2.0 app updates data, controls feeding/pump. Alerts for out-of-range values (e.g., temp &lt;15°C/>30°C). Web dashboard, LCD display. Wi-Fi, NTP-enabled. Ideal for hobbyists.
+
+
+The Smart Aquarium is an IoT-based system designed to automate and monitor an aquarium’s environment, ensuring optimal conditions for aquatic life. Built on an ESP32 microcontroller, it integrates sensors, actuators, and connectivity for real-time monitoring, control, and notifications. The system is tailored for hobbyists, offering user-friendly interfaces and automation to simplify fish care.
+Hardware Components
+
+ESP32 Microcontroller: The core processing unit, providing Wi-Fi connectivity and ample GPIO pins for sensor and actuator integration.
+DHT11 Sensor: Measures air temperature (threshold: <15°C or >30°C) and humidity (<30% or >80%) around the aquarium.
+DS18B20 Sensor: A waterproof sensor monitoring water temperature (threshold: <20°C or >32°C).
+Ultrasonic Sensor (HC-SR04): Measures food container distance to detect low food levels (>5 cm).
+pH and TDS Sensors (Simulated): Simulate pH (threshold: <6.8 or >8.2) and TDS (<180 or >280 ppm) for water quality monitoring.
+Servo Motor (SG90): Connected to GPIO 13, automates fish feeding by dispensing food.
+Relay Module: Controls a water pump (GPIO 14) for water circulation.
+16x2 LCD with I2C Interface: Displays sensor data (food level, air/water temperature, pH, TDS, pump status) on a rotating 3-second cycle.
+Wiring and Power: I2C (SDA: GPIO 21, SCL: GPIO 22), 5V/3.3V power supply for sensors and actuators.
+
+# Software Components
+
+Arduino IDE: Used for programming and uploading code to the ESP32.
+Blynk 2.0 Library: Enables cloud-based monitoring and control via the Blynk mobile app (Template ID: TMPL60viQI5st, Name: SmartAquarium, Auth Token: OB1E9ne28nzrjKS_XvwWp8hKf5JG3b8q).
+ESP32Servo Library: Controls the servo motor for precise feeding actions.
+DallasTemperature and OneWire Libraries: Interface with the DS18B20 sensor for water temperature readings.
+LiquidCrystal_I2C Library: Drives the LCD for local display (address: 0x27, may require verification).
+WiFi and WebServer Libraries: Facilitate Wi-Fi connectivity and host a web dashboard.
+NTPClient Library: Synchronizes time with pool.ntp.org for accurate feeding schedules.
+Tailwind CSS: Styles the web dashboard for a responsive, modern interface.
+
+# Functionality
+The Smart Aquarium monitors key parameters in real-time:
+
+Air Temperature and Humidity: DHT11 provides readings, updated every 5 seconds.
+Water Temperature: DS18B20 ensures optimal aquatic conditions.
+pH and TDS: Simulated sensors track water quality.
+Food Level: Ultrasonic sensor detects when food is low.
+
+# Automation:
+
+Feeding: A servo dispenses food manually (via Blynk or web) or on a user-set schedule. Feeding is blocked if food is empty (>5 cm).
+Water Pump: Controlled via relay for circulation, toggled through Blynk or web.
+
+# Notifications:
+
+Blynk 2.0 sends alerts when thresholds are breached (e.g., LOW_FOOD, AIR_TEMP_ALERT, HUMIDITY_ALERT, WATER_TEMP_ALERT, PH_ALERT, TDS_ALERT, FEED_SUCCESS), with a 10-minute cooldown to prevent spam.
+
+# Interfaces:
+
+Blynk App: Displays data (V0–V5 for sensors, V6 for pump, V7–V9 for feeding control), supports remote control.
+Web Dashboard: Hosted on the ESP32, provides a browser-based interface with real-time sensor data and controls.
+LCD Display: Shows rotating sensor data for local monitoring.
+
+# Connectivity:
+
+Wi-Fi connects to the user’s network (ssid: Bolbooo naaa, password: 123456789md) for Blynk and web access.
+NTP ensures accurate time for scheduled feeding.
+
+The Smart Aquarium automates feeding and water management, provides instant alerts for abnormal conditions, and offers seamless control via app, web, and LCD, making it an efficient, reliable solution for maintaining a healthy aquarium.
+
+Mobile App (Blynk):
+![photo_2025-08-16_21-05-19](https://github.com/user-attachments/assets/25472491-80bd-4a0f-895b-86f9d99360a7)
+Web App (Local):
+<img width="1440" height="782" alt="Screenshot 2025-08-16 at 9 06 15 PM" src="https://github.com/user-attachments/assets/e351705f-9672-4a46-818c-f4856aba3543" />
