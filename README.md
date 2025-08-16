@@ -110,7 +110,7 @@ g. **16x2 LCD with I2C Interface**:
 h. **Power Supply**:
    - Use a 5V power source (e.g., USB or external adapter) to power the ESP32 and peripherals. Ensure adequate current (e.g., 2A) for the servo and pump.
 
-#### Wiring Notes (Using 1, 2, 3 Format)
+#### Wiring Notes
 1. Use jumper wires or a breadboard for prototyping.
 2. Add appropriate pull-up resistors (10kΩ for DHT11, 4.7kΩ for DS18B20) to ensure reliable data transmission.
 3. Connect all GND pins to a common ground to avoid floating issues.
