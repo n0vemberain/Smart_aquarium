@@ -63,3 +63,9 @@ The Smart Aquarium automates feeding and water management, provides instant aler
 # Web App (Local):
 
 <img width="1440" height="782" alt="Screenshot 2025-08-16 at 9 06 15 PM" src="https://github.com/user-attachments/assets/e351705f-9672-4a46-818c-f4856aba3543" />
+
+# Diagram 
+
+<img width="1920" height="1080" alt="smart aquarium " src="https://github.com/user-attachments/assets/2b35a07d-300f-4fd1-a5cb-a3f244a54874" />
+
+
