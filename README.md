@@ -56,7 +56,10 @@ NTP ensures accurate time for scheduled feeding.
 
 The Smart Aquarium automates feeding and water management, provides instant alerts for abnormal conditions, and offers seamless control via app, web, and LCD, making it an efficient, reliable solution for maintaining a healthy aquarium.
 
-Mobile App (Blynk):
+# Mobile App (Blynk):
+
 ![photo_2025-08-16_21-05-19](https://github.com/user-attachments/assets/25472491-80bd-4a0f-895b-86f9d99360a7)
-Web App (Local):
+
+# Web App (Local):
+
 <img width="1440" height="782" alt="Screenshot 2025-08-16 at 9 06 15 PM" src="https://github.com/user-attachments/assets/e351705f-9672-4a46-818c-f4856aba3543" />
