@@ -18,7 +18,7 @@ Wiring and Power: I2C (SDA: GPIO 21, SCL: GPIO 22), 5V/3.3V power supply for sen
 # Software Components
 
 Arduino IDE: Used for programming and uploading code to the ESP32.
-Blynk 2.0 Library: Enables cloud-based monitoring and control via the Blynk mobile app (Template ID: TMPL60viQI5st, Name: SmartAquarium, Auth Token: OB1E9ne28nzrjKS_XvwWp8hKf5JG3b8q).
+Blynk 2.0 Library: Enables cloud-based monitoring and control via the Blynk mobile app.
 ESP32Servo Library: Controls the servo motor for precise feeding actions.
 DallasTemperature and OneWire Libraries: Interface with the DS18B20 sensor for water temperature readings.
 LiquidCrystal_I2C Library: Drives the LCD for local display (address: 0x27, may require verification).
@@ -45,13 +45,13 @@ Blynk 2.0 sends alerts when thresholds are breached (e.g., LOW_FOOD, AIR_TEMP_AL
 
 # Interfaces:
 
-Blynk App: Displays data (V0–V5 for sensors, V6 for pump, V7–V9 for feeding control), supports remote control.
+Blynk App: Displays data , supports remote control.
 Web Dashboard: Hosted on the ESP32, provides a browser-based interface with real-time sensor data and controls.
 LCD Display: Shows rotating sensor data for local monitoring.
 
 # Connectivity:
 
-Wi-Fi connects to the user’s network (ssid: Bolbooo naaa, password: 123456789md) for Blynk and web access.
+Wi-Fi connects to the user’s network for Blynk and web access.
 NTP ensures accurate time for scheduled feeding.
 
 The Smart Aquarium automates feeding and water management, provides instant alerts for abnormal conditions, and offers seamless control via app, web, and LCD, making it an efficient, reliable solution for maintaining a healthy aquarium.
