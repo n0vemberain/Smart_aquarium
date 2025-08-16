@@ -68,4 +68,58 @@ The Smart Aquarium automates feeding and water management, provides instant aler
 
 <img width="1920" height="1080" alt="smart aquarium " src="https://github.com/user-attachments/assets/2b35a07d-300f-4fd1-a5cb-a3f244a54874" />
 
+### Smart Aquarium Connection Details
+a. **ESP32 Microcontroller**:
+   - Power: 3.3V and GND pins connected to a stable 3.3V/5V power supply.
+   - Wi-Fi enabled for internet connectivity (no physical connection required).
+
+b. **DHT11 Sensor (Air Temperature and Humidity)**:
+   - VCC: Connected to 3.3V or 5V (check sensor specs).
+   - GND: Connected to GND.
+   - Data: Connected to GPIO 15 with a 10kΩ pull-up resistor to 3.3V.
+
+c. **DS18B20 Sensor (Water Temperature)**:
+   - VCC: Connected to 3.3V or 5V.
+   - GND: Connected to GND.
+   - Data: Connected to GPIO 4 with a 4.7kΩ pull-up resistor to 3.3V.
+
+d. **HC-SR04 Ultrasonic Sensor (Food Level)**:
+   - VCC: Connected to 5V.
+   - GND: Connected to GND.
+   - Trig: Connected to GPIO 5.
+   - Echo: Connected to GPIO 18.
+
+e. **SG90 Servo Motor (Feeding Mechanism)**:
+   - VCC: Connected to 5V.
+   - GND: Connected to GND.
+   - Signal: Connected to GPIO 13.
+
+f. **Relay Module (Water Pump Control)**:
+   - VCC: Connected to 3.3V or 5V (check module specs).
+   - GND: Connected to GND.
+   - Signal: Connected to GPIO 14.
+   - Pump: Connected to the relay’s NO (Normally Open) and COM (Common) terminals, with the pump powered by an external 5V/12V supply.
+
+g. **16x2 LCD with I2C Interface**:
+   - VCC: Connected to 5V.
+   - GND: Connected to GND.
+   - SDA: Connected to GPIO 21.
+   - SCL: Connected to GPIO 22.
+   - Ensure the I2C address (e.g., 0x27) matches your setup.
+
+h. **Power Supply**:
+   - Use a 5V power source (e.g., USB or external adapter) to power the ESP32 and peripherals. Ensure adequate current (e.g., 2A) for the servo and pump.
+
+#### Wiring Notes (Using 1, 2, 3 Format)
+1. Use jumper wires or a breadboard for prototyping.
+2. Add appropriate pull-up resistors (10kΩ for DHT11, 4.7kΩ for DS18B20) to ensure reliable data transmission.
+3. Connect all GND pins to a common ground to avoid floating issues.
+4. For the pump, use an external power supply if current exceeds ESP32 capabilities; control only via the relay.
+5. Secure connections with heat-shrink tubing or terminal blocks for durability.
+
+#### Verification
+- Test each connection with a multimeter to confirm continuity and voltage levels.
+- Use an I2C scanner sketch to verify the LCD’s address if the display fails to initialize.
+
+
 
